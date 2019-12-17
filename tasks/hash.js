@@ -21,7 +21,7 @@ module.exports = function(grunt) {
   // TASKS
   // ==========================================================================
 
-  grunt.registerMultiTask('hash', 'Append a unique hash to tne end of a file for cache busting.', function() {
+  grunt.registerMultiTask('hash', 'Append a unique hash to the end of a file for cache busting.', function() {
     var options = this.options({
       srcBasePath: "",
       destBasePath: "",
