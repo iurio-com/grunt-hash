@@ -58,7 +58,7 @@ Configuration follow the multi-task standard configuration format: http://gruntj
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
 
 ## License
-Copyright (c) 2012 Greg Allen  
+Copyright (c) 2012 Greg Allen, (c) 2019 Tobias Kellner
 Licensed under the MIT license.
 
 [migration_guide]: https://github.com/gruntjs/grunt/wiki/Upgrading-from-0.3-to-0.4
