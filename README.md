@@ -4,7 +4,7 @@ Append a unique hash to the end of a filename for cache busting. For example:
 
 examples/test1.js => examples/dist/test1.b93fd451.js
 
-##Grunt 0.4
+## Grunt 0.4
 
 This task now depends on grunt 0.4.x. Please see the [grunt 0.3 to 0.4 migration guide][migration_guide] for more details.
 
