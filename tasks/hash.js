@@ -26,6 +26,7 @@ module.exports = function(grunt) {
       srcBasePath: "",
       destBasePath: "",
       flatten: false,
+      sourceMap: false,
       hashLength: 8,
       hashFunction: getHash,
       hashSeparator: '.'
@@ -52,7 +53,26 @@ module.exports = function(grunt) {
         var key = path.relative(file.orig.dest, file.dest);
         var outKey = path.relative(file.orig.dest, outputPath);
 
-        grunt.file.copy(src, outputPath);
+        if (options.sourceMap) {
+          var sourcePath = path.dirname(src);
+          var match = source.match(/\bsourceMappingURL=([^\s]+)/);
+          if (match) {
+            var mapSrc = path.join(sourcePath, match[1]);
+            if (grunt.file.exists(mapSrc)) {
+              var mapExt = path.extname(mapSrc);
+              var newMapFile = newFile + mapExt;
+
+              source = source.replace(/\bsourceMappingURL=[^\s]+/, 'sourceMappingURL=' + newMapFile);
+
+              var mapOutputPath = path.join(destPath, newMapFile);
+              grunt.file.copy(mapSrc, mapOutputPath);
+            }
+          }
+          grunt.file.write(outputPath, source);
+        } else {
+          grunt.file.copy(src, outputPath);
+        }
+
         grunt.log.writeln('Generated: ' + outputPath);
 
         map[unixify(key)] = unixify(outKey);
