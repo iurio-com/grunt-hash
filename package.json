@@ -1,7 +1,7 @@
 {
   "name": "grunt-hash",
   "description": "Append a unique hash to the end of a filename for cache busting.",
-  "version": "0.6.0-beta.1",
+  "version": "0.6.0-beta.2",
   "homepage": "https://github.com/iurio-com/grunt-hash",
   "author": {
     "name": "Greg Allen",

@@ -1,3 +1,8 @@
+0.6.0-beta.2 / 2019-12-17
+==================
+
+  * Fix non-expanded destinations
+  * Add source map support
 
 0.6.0-beta.1 / 2015-02-27
 ==================
