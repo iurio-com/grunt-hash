@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 
         var source = grunt.file.read(src);
         var hash = options.hashFunction(source, 'utf8').substr(0, options.hashLength);
-        var destPath = path.dirname(file.dest);
+        var destPath = grunt.file.isFile(file.dest) ? path.dirname(file.dest) : file.dest;
         var ext = path.extname(src);
         var basename = path.basename(src, ext);
 
